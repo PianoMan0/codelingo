@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CodeLingo Path</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">CodeLingo</div>
+    <div class="user-info">
+      <span id="xp-label">0 XP</span>
+      <span id="streak-label">🔥 0-day streak</span>
+      <span id="progress-label">0% complete</span>
+      <button id="daily-challenge-btn" class="chip">Daily challenge</button>
+      <button id="dark-toggle" class="chip">Dark mode</button>
+      <button id="reset-progress" class="chip danger">Reset</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>Skill path</h2>
+      <div class="overall-progress">
+        <div class="progress-bar">
+          <div id="overall-progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+      <ul id="track-list"></ul>
+    </aside>
+
+    <section class="content">
+      <!-- Home / track view -->
+      <div id="view-home" class="view">
+        <h1 id="home-title">Choose a track</h1>
+        <p id="home-subtitle">Follow the path, complete lessons, and keep your streak alive.</p>
+        <ul id="lesson-list"></ul>
+      </div>
+
+      <!-- Lesson view -->
+      <div id="view-lesson" class="view hidden">
+        <button class="back" id="back-to-home">← Back</button>
+        <h1 id="lesson-title"></h1>
+        <p id="lesson-meta"></p>
+        <div id="lesson-body"></div>
+
+        <div id="code-runner" class="runner">
+          <h3>Try it yourself</h3>
+          <textarea id="runner-input"></textarea>
+          <div class="runner-actions">
+            <button id="run-code" class="primary">Run code</button>
+            <button id="clear-output" class="secondary">Clear output</button>
+          </div>
+          <pre id="runner-output"></pre>
+        </div>
+
+        <button id="start-practice" class="primary">Start practice</button>
+      </div>
+
+      <!-- Quiz view -->
+      <div id="view-quiz" class="view hidden">
+        <button class="back" id="quit-quiz">← Back to lessons</button>
+        <h1 id="quiz-title"></h1>
+        <p id="quiz-progress"></p>
+        <div id="quiz-question"></div>
+        <div id="quiz-options"></div>
+        <button id="submit-answer" class="primary" disabled>Check answer</button>
+        <div id="quiz-feedback"></div>
+        <button id="next-question" class="secondary hidden">Next</button>
+      </div>
+
+      <!-- Daily challenge view -->
+      <div id="view-daily" class="view hidden">
+        <button class="back" id="back-from-daily">← Back</button>
+        <h1>Daily challenge</h1>
+        <p id="daily-subtitle">One random question from anywhere in your path.</p>
+        <div id="daily-question"></div>
+        <div id="daily-options"></div>
+        <button id="daily-submit" class="primary" disabled>Check answer</button>
+        <div id="daily-feedback"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
